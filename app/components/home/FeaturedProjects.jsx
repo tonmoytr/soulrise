@@ -2,35 +2,35 @@ import Link from "next/link";
 
 const tiles = [
   {
-    href: "/projects",
+    href: "/project",
     img: "/assets/images/homepage/11.jpg",
     title: "Make People Believe in Cause",
     tags: ["Education", "Health"],
     cls: "tile-a",
   },
   {
-    href: "/projects",
+    href: "/project",
     img: "/assets/images/homepage/14.jpg",
     title: "Child Portrait",
     tags: ["Children", "Care"],
     cls: "tile-b",
   },
   {
-    href: "/projects",
+    href: "/project",
     img: "/assets/images/homepage/12.jpg",
     title: "Hope & Smiles",
     tags: ["People", "Community"],
     cls: "tile-c",
   },
   {
-    href: "/projects",
+    href: "/project",
     img: "/assets/images/homepage/13.jpg",
     title: "Provides Full Freedom To Women",
     tags: ["Women", "Freedom"],
     cls: "tile-d",
   },
   {
-    href: "/projects",
+    href: "/project",
     img: "/assets/images/homepage/6.jpg",
     title: "Joy Together",
     tags: ["Community", "Youth"],
@@ -52,7 +52,7 @@ export default function FeaturedProjects() {
             poor, you can create your own webpage and raise funds for the
             poorest of the poor in the Caribbean and Latin America.
           </p>
-          <Link href="/projects" className="button large w-button">
+          <Link href="/project" className="button large w-button">
             More Project
           </Link>
         </div>

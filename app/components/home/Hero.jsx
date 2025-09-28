@@ -23,10 +23,10 @@ export default function Hero() {
             </div>
 
             <div className="banner-button-wrap">
-              <Link href="/causes" className="button medium w-button">
+              <Link href="/project" className="button medium w-button">
                 Donate
               </Link>
-              <Link href="/about-us" className="white-button medium w-button">
+              <Link href="/about" className="white-button medium w-button">
                 Discover
               </Link>
             </div>

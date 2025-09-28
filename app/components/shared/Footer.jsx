@@ -100,6 +100,9 @@ export default function Footer() {
                       <Link href="/project" className="footer-link">
                         Projects
                       </Link>
+                      <Link href="/events" className="footer-link">
+                        Events
+                      </Link>
                       <Link href="/team" className="footer-link">
                         Team
                       </Link>
@@ -114,20 +117,11 @@ export default function Footer() {
                       <h3 className="footer-widget-title">Utility Page</h3>
                     </div>
                     <div className="footer-menu-link-wrap">
-                      <Link href="#" className="footer-link">
-                        Style Guide
+                      <Link href="/privacy" className="footer-link">
+                        Privacy Policy
                       </Link>
-                      <Link href="#" className="footer-link">
-                        Licences
-                      </Link>
-                      <a href="#" className="footer-link">
-                        Password
-                      </a>
-                      <a href="#" className="footer-link">
-                        404 Page
-                      </a>
-                      <Link href="#" className="footer-link">
-                        Changelog
+                      <Link href="terms" className="footer-link">
+                        Terms & Conditions
                       </Link>
                     </div>
                   </div>

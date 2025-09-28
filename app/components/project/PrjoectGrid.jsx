@@ -48,7 +48,7 @@ const DEFAULT_PROJECTS = [
   },
 ];
 
-// app/components/projects/ProjectsGrid.jsx
+// app/components/project/projectGrid.jsx
 export default function ProjectsGrid({ projects = DEFAULT_PROJECTS }) {
   return (
     <section className="project-gallery">

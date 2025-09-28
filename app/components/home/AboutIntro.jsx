@@ -26,7 +26,7 @@ export default function AboutIntro() {
                   tomorrow.
                 </p>
               </div>
-              <Link href="/about-us" className="white-button medium w-button">
+              <Link href="/about" className="white-button medium w-button">
                 Discover
               </Link>
             </div>
@@ -59,7 +59,7 @@ export default function AboutIntro() {
               >
                 <div style={{ position: "relative", paddingTop: "56.25%" }}>
                   <iframe
-                    src="https://www.youtube.com/embed/j9JfdQgaeRk"
+                    src="https://www.youtube.com/embed/BMgAM-PG0_I?si=fC84k8AIlcpXmV7t"
                     title="SoulRise video"
                     allow="autoplay; fullscreen"
                     style={{
