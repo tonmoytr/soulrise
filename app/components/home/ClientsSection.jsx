@@ -40,7 +40,7 @@ export default function ClientsSection() {
         <div className="counter-border" />
 
         {/* Client logos */}
-        <div className="clients-image-wrap">
+        {/* <div className="clients-image-wrap">
           <div className="w-layout-grid clients-grid">
             <div className="clients-image-content">
               <img
@@ -83,7 +83,7 @@ export default function ClientsSection() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

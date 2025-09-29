@@ -92,7 +92,7 @@ export default function EventsSection() {
                     <p className="event-organized-author">
                       Organized By :
                       <Link
-                        href="/organizer/david-james"
+                        href="/team"
                         className="author-link"
                       >
                         {featured.organizer}
@@ -140,7 +140,7 @@ export default function EventsSection() {
                               Organized By :&nbsp;
                             </p>
                             <Link
-                              href="/organizer/david-james"
+                              href="/team"
                               className="author-link"
                             >
                               {ev.organizer}

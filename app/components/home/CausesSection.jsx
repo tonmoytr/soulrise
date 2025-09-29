@@ -76,7 +76,7 @@ export default function CausesSection() {
                         <div className="donation-full-wrap">
                           <div className="causes-button-wrap">
                             <Link
-                              href={s.href}
+                              href={"/project"}
                               className="black-button medium w-button"
                             >
                               Donate

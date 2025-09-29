@@ -82,7 +82,7 @@ export default function Navbar() {
               </Link>
 
               {/* PAGES (desktop: hover; mobile: tap to expand) */}
-              <div className="w-dropdown nav-dropdown nav-sep pages-btn">
+              {/* <div className="w-dropdown nav-dropdown nav-sep pages-btn">
                 <button
                   type="button"
                   className="w-dropdown-toggle nav-link dropdown"
@@ -130,13 +130,19 @@ export default function Navbar() {
                     Blog
                   </Link>
                 </div>
-              </div>
+              </div> */}
 
               <Link href="/events" className="nav-link w-nav-link nav-sep">
                 Events
               </Link>
-              <Link href="/contact" className="nav-link w-nav-link">
-                Contact
+              <Link href="/project" className="nav-link w-nav-link">
+                Projects
+              </Link>
+              <Link href="/blog" className="nav-link w-nav-link">
+                Blog
+              </Link>
+              <Link href="/volunteer" className="nav-link w-nav-link">
+                Volunteer
               </Link>
             </nav>
 
