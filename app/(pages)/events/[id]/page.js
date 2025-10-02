@@ -61,10 +61,9 @@ export default function EventPage({ params }) {
             ) : null}
           </div>
 
+          <img className="evp__hero" src={ev.image} alt={ev.title} />
           <h1 className="evp__title">{ev.title}</h1>
           {ev.excerpt && <p className="evp__excerpt">{ev.excerpt}</p>}
-
-          <img className="evp__hero" src={ev.image} alt={ev.title} />
 
           <div className="evp__grid">
             {/* Main column */}

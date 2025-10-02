@@ -117,6 +117,12 @@ export default function Footer() {
                       <h3 className="footer-widget-title">Utility Page</h3>
                     </div>
                     <div className="footer-menu-link-wrap">
+                      <Link href="/blog" className="footer-link">
+                        Blog
+                      </Link>
+                      <Link href="/contact" className="footer-link">
+                        Contact
+                      </Link>
                       <Link href="/privacy" className="footer-link">
                         Privacy Policy
                       </Link>

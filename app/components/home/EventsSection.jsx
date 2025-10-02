@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 const featured = {
-  href: "/events",
+  href: "/events/ev-01",
   img: "/assets/images/homepage/5.jpg",
   day: "30",
   month: "July",
@@ -14,28 +14,28 @@ const featured = {
 
 const list = [
   {
-    href: "/events",
+    href: "/events/ev-03",
     day: "30",
     month: "July",
     organizer: "David James",
-    title: "Education for Poor Children",
-    desc: "Capitalize on low hanging fruit to identify a ballpark value added activity to beta test divide with additional.",
+    title: "Mothers & Children Health Camp",
+    desc: "Mobile clinic offering checkups, vaccinations, and nutrition counseling.",
   },
   {
-    href: "/events",
+    href: "/events/ev-06",
     day: "26",
     month: "July",
     organizer: "David James",
-    title: "Healthy Food for Growing",
-    desc: "Capitalize on low hanging fruit to identify a ballpark value added activity to beta test divide with additional.",
+    title: "Emergency Shelter Repair (Monsoon)",
+    desc: "Repair flooded homes: tarps, bamboo, corrugated sheets, and tool kits.",
   },
   {
-    href: "/events",
+    href: "/events/ev-05",
     day: "22",
     month: "July",
     organizer: "David James",
-    title: "New Cloths Coming",
-    desc: "Capitalize on low hanging fruit to identify a ballpark value added activity to beta test divide with additional.",
+    title: "Youth Digital Skills Lab",
+    desc: "Equip youths with basic digital skills and job readiness training.",
   },
 ];
 
@@ -91,10 +91,7 @@ export default function EventsSection() {
                   <div className="event-organizer">
                     <p className="event-organized-author">
                       Organized By :
-                      <Link
-                        href="/team"
-                        className="author-link"
-                      >
+                      <Link href="/team" className="author-link">
                         {featured.organizer}
                       </Link>
                     </p>
@@ -139,10 +136,7 @@ export default function EventsSection() {
                             <p className="event-card-content">
                               Organized By :&nbsp;
                             </p>
-                            <Link
-                              href="/team"
-                              className="author-link"
-                            >
+                            <Link href="/team" className="author-link">
                               {ev.organizer}
                             </Link>
                           </div>

@@ -8,7 +8,7 @@ export const causes = [
     category: "Education",
     location: "Rangpur, Bangladesh",
     organizer: {
-      name: "Civic Lens Foundation",
+      name: "SoulRise Foundation",
       phone: "+1 (415) 555-1212",
       email: "support@civiclens.org",
     },
@@ -51,7 +51,7 @@ export const causes = [
     faq: [
       {
         q: "Is my donation tax-deductible?",
-        a: "Yes, Civic Lens is a registered non-profit; you’ll receive a receipt.",
+        a: "Yes, SoulRise is a registered non-profit; you’ll receive a receipt.",
       },
       {
         q: "What happens if the goal is not met?",
@@ -73,7 +73,7 @@ export const causes = [
     category: "Food Security",
     location: "Dhaka, Bangladesh",
     organizer: {
-      name: "Civic Lens Foundation",
+      name: "SoulRise Foundation",
       phone: "+1 (415) 555-1212",
       email: "meals@civiclens.org",
     },
@@ -122,7 +122,7 @@ export const causes = [
     category: "Health",
     location: "Barishal, Bangladesh",
     organizer: {
-      name: "Civic Lens Foundation",
+      name: "SoulRise Foundation",
       phone: "+1 (415) 555-1212",
       email: "health@civiclens.org",
     },
@@ -171,7 +171,7 @@ export const causes = [
     category: "WASH",
     location: "Khulna, Bangladesh",
     organizer: {
-      name: "Civic Lens Foundation",
+      name: "SoulRise Foundation",
       phone: "+1 (415) 555-1212",
       email: "wash@civiclens.org",
     },
@@ -218,7 +218,7 @@ export const causes = [
     category: "Livelihood",
     location: "Chattogram, Bangladesh",
     organizer: {
-      name: "Civic Lens Foundation",
+      name: "SoulRise Foundation",
       phone: "+1 (415) 555-1212",
       email: "skills@civiclens.org",
     },
@@ -260,7 +260,7 @@ export const causes = [
     category: "Emergency Relief",
     location: "Sylhet, Bangladesh",
     organizer: {
-      name: "Civic Lens Foundation",
+      name: "SoulRise Foundation",
       phone: "+1 (415) 555-1212",
       email: "relief@civiclens.org",
     },

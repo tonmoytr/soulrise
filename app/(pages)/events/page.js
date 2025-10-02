@@ -16,7 +16,7 @@ export default function EventsPage() {
         <PageHero
           subtitle="How We Reach People..."
           title={"Our Events"}
-          bg="https://images.unsplash.com/photo-1526318472351-c75fcf070305?w=2000&q=80"
+          bg="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1600&q=80"
           height="90vh"
           vAlign="center"
           bgPosition="center 38%"

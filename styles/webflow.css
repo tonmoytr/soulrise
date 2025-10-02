@@ -15164,7 +15164,7 @@ blockquote {
 .clc-wrap {
   max-width: var(--clc-max);
   margin: 0 auto;
-  padding: 48px 16px 64px;
+  padding: 20px 48px 16px 64px;
 }
 
 .clc-breadcrumb a {
@@ -15205,7 +15205,7 @@ blockquote {
   width: 100%;
   border-radius: var(--clc-radius);
   display: block;
-  height: auto;
+  height: 55vh;
   object-fit: cover;
   box-shadow: 0 1px 0 rgba(16, 24, 40, 0.04), 0 1px 2px rgba(16, 24, 40, 0.12);
 }
@@ -15527,7 +15527,7 @@ blockquote {
 .evp__wrap {
   max-width: var(--evp-max);
   margin: 0 auto;
-  padding: 48px 16px 64px;
+  padding: 20px 48px 16px 64px;
   color: var(--evp-ink);
 }
 .evp__back {
@@ -15565,7 +15565,7 @@ blockquote {
 
 .evp__hero {
   width: 100%;
-  height: auto;
+  height: 55vh;
   display: block;
   border-radius: 14px;
   object-fit: cover;
@@ -15825,4 +15825,189 @@ blockquote {
 .evp-share a:hover {
   border-color: #0b7285;
   color: #0b7285;
+}
+/* app/(pages)/events/styles.css */
+.evl {
+  --ink: #112233;
+  --muted: #6b7785;
+  --border: #e7ecf2;
+  --max: 1200px;
+  --gap: 24px;
+  --accent: #0f766e;
+}
+.evl__wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 48px 16px 64px;
+  color: var(--ink);
+}
+
+.evl__head {
+  margin-bottom: 18px;
+}
+.evl__title {
+  font-size: 40px;
+  line-height: 1.1;
+  margin: 0 0 6px;
+}
+.evl__subtitle {
+  color: var(--muted);
+  margin: 0;
+}
+
+.evl__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+  margin-top: 18px;
+}
+@media (max-width: 1024px) {
+  .evl__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .evl__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card */
+.evl-card {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(16, 24, 40, 0.04), 0 1px 2px rgba(16, 24, 40, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.evl-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(16, 24, 40, 0.18);
+}
+
+.evl-card__link {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+/* Media */
+.evl-card__media {
+  position: relative;
+}
+.evl-card__media img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.evl-card:hover .evl-card__media img {
+  transform: scale(1.05);
+}
+
+/* Date badge */
+.evl-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+.evl-badge__day {
+  font-weight: 800;
+  font-size: 16px;
+}
+.evl-badge__month {
+  font-size: 11px;
+  color: #425466;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Body */
+.evl-card__body {
+  padding: 14px 14px 16px;
+}
+.evl-card__title {
+  font-size: 20px;
+  line-height: 1.3;
+  margin: 0 0 6px;
+}
+.evl-card__title-link {
+  color: #0f172a;
+  text-decoration: none;
+  position: relative;
+  z-index: 4;
+}
+.evl-card__title-link:hover {
+  text-decoration: underline;
+}
+.evl-card__excerpt {
+  color: var(--muted);
+  margin: 0 0 10px;
+  min-height: 40px;
+}
+
+/* Meta list */
+.evl-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+  display: grid;
+  gap: 4px;
+}
+.evl-meta__item {
+  color: #2a3b4c;
+  font-size: 14px;
+}
+.evl-meta__label {
+  color: var(--muted);
+  margin-right: 4px;
+}
+
+/* Capacity bar */
+.evl-cap {
+  margin: 8px 0 8px;
+}
+.evl-cap__bar {
+  height: 8px;
+  width: 100%;
+  background: #eef3f7;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.evl-cap__bar > i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #22c1b6);
+}
+.evl-cap__label {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Tags */
+.evl-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+.evl-tag {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: #2a3b4c;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
 }

@@ -2,6 +2,7 @@
 import Footer from "@/app/components/shared/Footer";
 import Navbar from "@/app/components/shared/Navbar";
 import TopBar from "@/app/components/shared/TopBar";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllCauseSlugs, getCauseBySlug } from "../../../data/causes";
 
@@ -38,7 +39,7 @@ export default function CausePage({ params }) {
         <div className="clc-wrap">
           {/* Breadcrumb */}
           <div className="clc-breadcrumb">
-            <a href="/causes">&larr; Back to all causes</a>
+            <Link href="/causes">&larr; Back to all causes</Link>
           </div>
 
           {/* Meta & Title */}
@@ -72,11 +73,10 @@ export default function CausePage({ params }) {
             </span>
           </div>
 
-          <h1 className="clc-title">{cause.title}</h1>
-          <p className="clc-excerpt">{cause.excerpt}</p>
-
           {/* Hero image */}
           <img src={cause.image} alt={cause.title} className="clc-hero" />
+          <h1 className="clc-title">{cause.title}</h1>
+          <p className="clc-excerpt">{cause.excerpt}</p>
 
           {/* Grid */}
           <div className="clc-grid">
@@ -212,7 +212,7 @@ export default function CausePage({ params }) {
             {/* Right column (sidebar) */}
             <aside>
               {/* Donate */}
-              <div className="clc-card clc-side-card clc-donate">
+              {/* <div className="clc-card clc-side-card clc-donate">
                 <h3>Support this cause</h3>
                 <div className="clc-muted-row">Choose an amount</div>
                 <div className="clc-amounts" style={{ marginTop: 8 }}>
@@ -266,10 +266,10 @@ export default function CausePage({ params }) {
                 <div className="clc-muted-row" style={{ marginTop: 8 }}>
                   Secure payment • Instant receipt
                 </div>
-              </div>
+              </div> */}
 
               {/* Organizer */}
-              <div className="clc-card clc-side-card clc-organizer">
+              {/* <div className="clc-card clc-side-card clc-organizer">
                 <div
                   className="clc-muted-row"
                   style={{ textTransform: "uppercase", letterSpacing: ".04em" }}
@@ -287,10 +287,10 @@ export default function CausePage({ params }) {
                 {cause.organizer?.phone && (
                   <div className="clc-muted-row">{cause.organizer.phone}</div>
                 )}
-              </div>
+              </div> */}
 
               {/* Share */}
-              <div className="clc-card clc-side-card">
+              {/* <div className="clc-card clc-side-card">
                 <div
                   className="clc-muted-row"
                   style={{ textTransform: "uppercase", letterSpacing: ".04em" }}
@@ -323,7 +323,7 @@ export default function CausePage({ params }) {
                     LinkedIn
                   </a>
                 </div>
-              </div>
+              </div> */}
             </aside>
           </div>
 

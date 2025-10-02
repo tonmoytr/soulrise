@@ -8,7 +8,7 @@ export const events = [
     // existing fields your grid already uses:
     dateDay: "30",
     dateMonth: "July",
-    organizer: "Civic Lens Foundation",
+    organizer: "SoulRise Foundation",
     organizerUrl: "https://example.org",
     excerpt:
       "Community session on education access, supplies distribution, and mentor sign-ups.",
@@ -117,10 +117,10 @@ export const events = [
     id: "ev-02",
     title: "Healthy Food for Growing",
     image:
-      "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1600&q=80",
+      "/assets/images/events/food.jpg",
     dateDay: "30",
     dateMonth: "July",
-    organizer: "Civic Lens Foundation",
+    organizer: "SoulRise Foundation",
     organizerUrl: "https://example.org",
     excerpt: "Food kit distribution with nutrition tips for families.",
     location: "Chattogram, Bangladesh",
@@ -190,10 +190,10 @@ export const events = [
     id: "ev-03",
     title: "Mothers & Children Health Camp",
     image:
-      "https://images.unsplash.com/photo-1604881989322-40740f21903d?w=1600&q=80",
+      "/assets/images/events/mom.jpg",
     dateDay: "30",
     dateMonth: "July",
-    organizer: "Civic Lens Foundation",
+    organizer: "SoulRise Foundation",
     organizerUrl: "https://example.org",
     excerpt:
       "Mobile clinic offering checkups, vaccinations, and nutrition counseling.",
@@ -250,7 +250,7 @@ export const events = [
       "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=1600&q=80",
     dateDay: "30",
     dateMonth: "July",
-    organizer: "Civic Lens Foundation",
+    organizer: "SoulRise Foundation",
     organizerUrl: "https://example.org",
     excerpt:
       "Install a community tube-well and provide hygiene kits to 150 households.",
@@ -313,7 +313,7 @@ export const events = [
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600&q=80",
     dateDay: "30",
     dateMonth: "July",
-    organizer: "Civic Lens Foundation",
+    organizer: "SoulRise Foundation",
     organizerUrl: "https://example.org",
     excerpt:
       "Equip youths with basic digital skills and job readiness training.",
@@ -380,10 +380,10 @@ export const events = [
     id: "ev-06",
     title: "Emergency Shelter Repair (Monsoon)",
     image:
-      "https://images.unsplash.com/photo-1583947215259-38e31be8757f?w=1600&q=80",
+      "/assets/images/events/shelter.jpg",
     dateDay: "30",
     dateMonth: "July",
-    organizer: "Civic Lens Foundation",
+    organizer: "SoulRise Foundation",
     organizerUrl: "https://example.org",
     excerpt:
       "Repair flooded homes: tarps, bamboo, corrugated sheets, and tool kits.",

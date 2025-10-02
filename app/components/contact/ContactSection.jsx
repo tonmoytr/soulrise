@@ -1,16 +1,108 @@
+// app/components/home/ContactSection.jsx
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
+
 export default function ContactSection({
-  email = "support@humanity.com",
-  phone = "+01 (000) 265 458",
+  email = "support@soulrise.com",
+  phone = "+44 20 7946 095",
   socials = {
     instagram: "https://www.instagram.com",
     facebook: "https://www.facebook.com",
     twitter: "https://www.twitter.com",
     pinterest: "https://www.pinterest.com",
   },
-  formAction = "#", // replace with your handler later
+  formAction = "#", // not used in this client-only demo; we'll handle submit ourselves
 }) {
+  const [showToast, setShowToast] = useState(false);
+  const [phoneValue, setPhoneValue] = useState("");
+
+  // Show toast if URL has ?submitted=1 (persists across reload)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const url = new URL(window.location.href);
+    if (url.searchParams.get("submitted") === "1") {
+      setShowToast(true);
+      // clean the URL so it doesn't keep showing next time
+      url.searchParams.delete("submitted");
+      window.history.replaceState({}, "", url.pathname + url.search);
+      // auto-hide toast
+      const t = setTimeout(() => setShowToast(false), 3000);
+      return () => clearTimeout(t);
+    }
+  }, []);
+
+  // Phone: digits only
+  const onPhoneChange = useCallback((e) => {
+    const digitsOnly = e.target.value.replace(/\D/g, "");
+    setPhoneValue(digitsOnly);
+  }, []);
+
+  // (Optional) Prevent letters before they land in the input
+  const onPhoneKeyDown = useCallback((e) => {
+    // allow control keys
+    const allowedKeys = [
+      "Backspace",
+      "Delete",
+      "Tab",
+      "ArrowLeft",
+      "ArrowRight",
+      "Home",
+      "End",
+    ];
+    if (allowedKeys.includes(e.key)) return;
+    // allow digits
+    if (/^\d$/.test(e.key)) return;
+    // block everything else
+    e.preventDefault();
+  }, []);
+
+  const onSubmit = useCallback((e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+
+    // Use built-in HTML validation
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    // If you later hook to an API, do it here (fetch/POST).
+    // For now: reset, then reload with flag to show toast.
+    form.reset();
+    setPhoneValue("");
+
+    if (typeof window !== "undefined") {
+      const url = new URL(window.location.href);
+      url.searchParams.set("submitted", "1");
+      window.location.href = url.toString(); // reloads
+    }
+  }, []);
+
   return (
     <section className="contact-us-section">
+      {/* Toast (small, unobtrusive) */}
+      {showToast && (
+        <div
+          role="status"
+          aria-live="polite"
+          style={{
+            position: "fixed",
+            right: 16,
+            bottom: 16,
+            background: "#0f766e",
+            color: "#fff",
+            padding: "10px 14px",
+            borderRadius: 10,
+            boxShadow: "0 6px 22px rgba(0,0,0,.18)",
+            zIndex: 9999,
+            fontWeight: 600,
+          }}
+        >
+          ✅ Form has been submitted
+        </div>
+      )}
+
       <div className="container w-container">
         <div className="w-layout-grid contact-us-grid">
           {/* LEFT: copy + contact info */}
@@ -132,8 +224,7 @@ export default function ContactSection({
                 <form
                   className="contact-form"
                   method="post"
-                  action={formAction}
-                  noValidate
+                  onSubmit={onSubmit}
                 >
                   <input
                     type="text"
@@ -143,14 +234,23 @@ export default function ContactSection({
                     placeholder="Enter Your Name*"
                     required
                   />
+
+                  {/* PHONE: digits only, HTML validation, numeric keypad on mobile */}
                   <input
                     type="tel"
                     className="contact-form-label w-input"
                     id="contact-phone"
                     name="phone"
                     placeholder="Phone Number*"
+                    inputMode="numeric"
+                    pattern="^\d{6,15}$"
+                    title="Please enter digits only (6–15)."
+                    value={phoneValue}
+                    onChange={onPhoneChange}
+                    onKeyDown={onPhoneKeyDown}
                     required
                   />
+
                   <input
                     type="email"
                     className="contact-form-label w-input"
@@ -159,6 +259,7 @@ export default function ContactSection({
                     placeholder="Email Address*"
                     required
                   />
+
                   <textarea
                     className="contact-form-label message-label w-input"
                     id="contact-message"
@@ -166,6 +267,7 @@ export default function ContactSection({
                     placeholder="Your Message*"
                     required
                   />
+
                   <input
                     type="submit"
                     className="black-button extra-large w-button"
@@ -173,7 +275,7 @@ export default function ContactSection({
                   />
                 </form>
 
-                {/* Webflow-style status blocks (hidden by default in your CSS) */}
+                {/* (kept for compatibility; your CSS can keep them hidden) */}
                 <div className="success-message w-form-done">
                   <div>Thank you! Your submission has been received!</div>
                 </div>
