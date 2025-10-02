@@ -1,3 +1,8 @@
+// app/components/.../VolunteerForm.jsx
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
+
 export default function VolunteerForm({
   subtitle = "Help The People With us",
   title = "Need Your Heartful Help",
@@ -31,8 +36,78 @@ export default function VolunteerForm({
   cta = { label: "Get Started", href: "/causes" },
   formAction = "#",
 }) {
+  const [showToast, setShowToast] = useState(false);
+  const [phoneValue, setPhoneValue] = useState("");
+
+  // auto-hide toast
+  useEffect(() => {
+    if (!showToast) return;
+    const t = setTimeout(() => setShowToast(false), 3000);
+    return () => clearTimeout(t);
+  }, [showToast]);
+
+  // Phone: keep only digits
+  const onPhoneChange = useCallback((e) => {
+    const digitsOnly = e.target.value.replace(/\D/g, "");
+    setPhoneValue(digitsOnly);
+  }, []);
+
+  // Prevent non-digits being typed
+  const onPhoneKeyDown = useCallback((e) => {
+    const allowed = [
+      "Backspace",
+      "Delete",
+      "Tab",
+      "ArrowLeft",
+      "ArrowRight",
+      "Home",
+      "End",
+    ];
+    if (allowed.includes(e.key)) return;
+    if (/^\d$/.test(e.key)) return;
+    e.preventDefault();
+  }, []);
+
+  const onSubmit = useCallback((e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+
+    // Native validation
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    // If you later POST to an API, do it here. On success:
+    form.reset();
+    setPhoneValue("");
+    setShowToast(true); // top-right toast
+  }, []);
+
   return (
     <section className="volunteer-form" data-component="VolunteerForm">
+      {/* Toast: TOP-RIGHT */}
+      {showToast && (
+        <div
+          role="status"
+          aria-live="polite"
+          style={{
+            position: "fixed",
+            top: 16,
+            right: 16,
+            background: "#0f766e",
+            color: "#fff",
+            padding: "10px 14px",
+            borderRadius: 10,
+            boxShadow: "0 6px 22px rgba(0,0,0,.18)",
+            zIndex: 9999,
+            fontWeight: 600,
+          }}
+        >
+          ✅ Your kindness is a gift to the world
+        </div>
+      )}
+
       <div className="container w-container">
         <div className="w-layout-grid volunteer-grid">
           {/* LEFT: copy + steps */}
@@ -90,41 +165,109 @@ export default function VolunteerForm({
                   action={formAction}
                   className="volunteer-page-form"
                   noValidate
+                  onSubmit={onSubmit}
                 >
+                  <label
+                    htmlFor="vol-name"
+                    style={{
+                      display: "block",
+                      fontWeight: 600,
+                      marginBottom: 6,
+                    }}
+                  >
+                    Name
+                  </label>
                   <input
+                    id="vol-name"
                     className="volunteer-form-label w-input"
                     name="name"
                     placeholder="Enter Your Name*"
                     type="text"
                     required
                   />
+
+                  <label
+                    htmlFor="vol-phone"
+                    style={{
+                      display: "block",
+                      fontWeight: 600,
+                      margin: "10px 0 6px",
+                    }}
+                  >
+                    Phone Number
+                  </label>
                   <input
+                    id="vol-phone"
                     className="volunteer-form-label w-input"
                     name="phone"
                     placeholder="Phone Number*"
                     type="tel"
+                    inputMode="numeric"
+                    pattern="^\d{6,15}$"
+                    title="Please enter digits only (6–15)."
+                    value={phoneValue}
+                    onChange={onPhoneChange}
+                    onKeyDown={onPhoneKeyDown}
                     required
                   />
+
+                  <label
+                    htmlFor="vol-email"
+                    style={{
+                      display: "block",
+                      fontWeight: 600,
+                      margin: "10px 0 6px",
+                    }}
+                  >
+                    Email
+                  </label>
                   <input
+                    id="vol-email"
                     className="volunteer-form-label w-input"
                     name="email"
                     placeholder="Email Address*"
                     type="email"
                     required
                   />
+
+                  <label
+                    htmlFor="vol-address"
+                    style={{
+                      display: "block",
+                      fontWeight: 600,
+                      margin: "10px 0 6px",
+                    }}
+                  >
+                    Address
+                  </label>
                   <input
+                    id="vol-address"
                     className="volunteer-form-label w-input"
                     name="address"
                     placeholder="Address*"
                     type="text"
                     required
                   />
+
+                  <label
+                    htmlFor="vol-occupation"
+                    style={{
+                      display: "block",
+                      fontWeight: 600,
+                      margin: "10px 0 6px",
+                    }}
+                  >
+                    About Occupation
+                  </label>
                   <textarea
+                    id="vol-occupation"
                     className="volunteer-form-label volunteer-message-box w-input"
                     name="occupation"
                     placeholder="About Occupation*"
                     maxLength={5000}
+                    required
                   />
+
                   <input
                     type="submit"
                     className="black-button extra-large w-button"
@@ -132,6 +275,7 @@ export default function VolunteerForm({
                   />
                 </form>
 
+                {/* keep these for your existing CSS/messages */}
                 <div className="success-message w-form-done">
                   <div>Thank you! Your submission has been received!</div>
                 </div>
