@@ -4721,7 +4721,7 @@ blockquote {
 }
 
 .gallery-pop-up {
-  background-color: var(--primary-color);
+  background-color: rgba(255, 0, 0, 0.507);
   flex-direction: column;
   justify-content: space-between;
   max-width: 100%;
@@ -14161,7 +14161,7 @@ blockquote {
 /* Images need to fill the cell, no 99% gap */
 .project-gallery-image {
   width: 100% !important;
-  height: auto;
+  height: 250px;
   display: block;
 }
 
@@ -16010,4 +16010,42 @@ blockquote {
   padding: 6px 10px;
   border-radius: 999px;
   font-size: 12px;
+}
+/* Ensure the overlay is clipped to the image box */
+.gallery-image-wrap {
+  position: relative; /* establish containing block for overlay */
+  overflow: hidden; /* hide any spill */
+  line-height: 0; /* removes inline-img descender gaps */
+}
+
+/* Make sure the image defines the box size cleanly */
+.project-gallery-image {
+  display: block; /* no inline gap */
+  width: 100%;
+  height: auto; /* keeps natural aspect ratio */
+}
+
+/* Overlay pinned to the image wrapper only */
+.gallery-pop-up {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  display: flex; /* or keep your existing layout */
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 0, 0, 0.5); /* your overlay color */
+  padding: 35px 40px 40px; /* keep your padding if you like */
+  opacity: 0; /* use fade in/out instead of display:none */
+  transition: opacity 0.25s ease;
+}
+
+/* Show overlay on hover of the image box (not the whole card) */
+.gallery-image-wrap:hover .gallery-pop-up {
+  opacity: 1;
+}
+/* Uniform tiles (e.g., 260px tall) */
+.project-gallery-image {
+  width: 100%;
+  height: 260px; /* pick the size you want */
+  object-fit: cover; /* crop to fill without distortion */
+  display: block;
 }

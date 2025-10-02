@@ -138,8 +138,8 @@ export default function Navbar() {
               <Link href="/project" className="nav-link w-nav-link">
                 Projects
               </Link>
-              <Link href="/blog" className="nav-link w-nav-link">
-                Blog
+              <Link href="/campaigns" className="nav-link w-nav-link">
+                Campaigns
               </Link>
               <Link href="/volunteer" className="nav-link w-nav-link">
                 Volunteer

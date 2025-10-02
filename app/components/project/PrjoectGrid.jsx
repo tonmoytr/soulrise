@@ -59,35 +59,36 @@ export default function ProjectsGrid({ projects = DEFAULT_PROJECTS }) {
               <div key={idx} className="gallery-content-area">
                 <div className="gallery-content-wrap">
                   <div className="gallery-image-wrap">
-                    {/* Use <img> to avoid the Next/Image wrapper sizing */}
                     <img
                       src={item.image}
                       alt={item.title}
                       className="project-gallery-image"
                       loading="lazy"
                     />
-                  </div>
 
-                  <div className="gallery-pop-up">
-                    <div className="gallery-lightbox-link">
-                      <a
-                        href={item.popup || item.image}
-                        className="gallery-lightbox w-inline-block"
-                        aria-label={`Open ${item.title}`}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <img
-                          src="https://cdn.prod.website-files.com/62b2a013e2866c75039c37cb/62b54bb0feeafea3621e0468_project-ligthbox-icon.svg"
-                          alt=""
-                          loading="lazy"
-                        />
-                      </a>
-                    </div>
+                    {/* ⬇️  Moved overlay inside the image wrapper */}
+                    <div className="gallery-pop-up">
+                      <div className="gallery-lightbox-link">
+                        <a
+                          href={item.popup || item.image}
+                          className="gallery-lightbox w-inline-block"
+                          aria-label={`Open ${item.title}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <img
+                            src="https://cdn.prod.website-files.com/62b2a013e2866c75039c37cb/62b54bb0feeafea3621e0468_project-ligthbox-icon.svg"
+                            alt=""
+                            loading="lazy"
+                          />
+                        </a>
+                      </div>
 
-                    <div className="gallery-title-wrap">
-                      <h2 className="gallery-content">{item.title}</h2>
+                      <div className="gallery-title-wrap">
+                        <h2 className="gallery-content">{item.title}</h2>
+                      </div>
                     </div>
+                    {/* ⬆️ */}
                   </div>
                 </div>
               </div>

@@ -22,7 +22,7 @@ export default function EventsPage() {
       <div className="evl container">
         <div className="evl__wrap">
           <header className="evl__head">
-            <h1 className="evl__title">Our Events</h1>
+            <h1 className="evl__title">Our Campaigns</h1>
             <p className="evl__subtitle">
               See what’s happening next and join us on the ground.
             </p>
