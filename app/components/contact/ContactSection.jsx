@@ -12,25 +12,16 @@ export default function ContactSection({
     twitter: "https://www.twitter.com",
     pinterest: "https://www.pinterest.com",
   },
-  formAction = "#", // not used in this client-only demo; we'll handle submit ourselves
 }) {
   const [showToast, setShowToast] = useState(false);
   const [phoneValue, setPhoneValue] = useState("");
 
-  // Show toast if URL has ?submitted=1 (persists across reload)
+  // auto-hide the toast
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    const url = new URL(window.location.href);
-    if (url.searchParams.get("submitted") === "1") {
-      setShowToast(true);
-      // clean the URL so it doesn't keep showing next time
-      url.searchParams.delete("submitted");
-      window.history.replaceState({}, "", url.pathname + url.search);
-      // auto-hide toast
-      const t = setTimeout(() => setShowToast(false), 3000);
-      return () => clearTimeout(t);
-    }
-  }, []);
+    if (!showToast) return;
+    const t = setTimeout(() => setShowToast(false), 3000);
+    return () => clearTimeout(t);
+  }, [showToast]);
 
   // Phone: digits only
   const onPhoneChange = useCallback((e) => {
@@ -38,10 +29,9 @@ export default function ContactSection({
     setPhoneValue(digitsOnly);
   }, []);
 
-  // (Optional) Prevent letters before they land in the input
+  // Prevent letters from being typed
   const onPhoneKeyDown = useCallback((e) => {
-    // allow control keys
-    const allowedKeys = [
+    const allowed = [
       "Backspace",
       "Delete",
       "Tab",
@@ -50,10 +40,8 @@ export default function ContactSection({
       "Home",
       "End",
     ];
-    if (allowedKeys.includes(e.key)) return;
-    // allow digits
+    if (allowed.includes(e.key)) return;
     if (/^\d$/.test(e.key)) return;
-    // block everything else
     e.preventDefault();
   }, []);
 
@@ -61,35 +49,29 @@ export default function ContactSection({
     e.preventDefault();
     const form = e.currentTarget;
 
-    // Use built-in HTML validation
+    // Native validation (HTML5)
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
 
-    // If you later hook to an API, do it here (fetch/POST).
-    // For now: reset, then reload with flag to show toast.
+    // If you later POST somewhere, do it here. On success:
     form.reset();
     setPhoneValue("");
-
-    if (typeof window !== "undefined") {
-      const url = new URL(window.location.href);
-      url.searchParams.set("submitted", "1");
-      window.location.href = url.toString(); // reloads
-    }
+    setShowToast(true); // show toast (top-right)
   }, []);
 
   return (
     <section className="contact-us-section">
-      {/* Toast (small, unobtrusive) */}
+      {/* Toast: TOP-RIGHT */}
       {showToast && (
         <div
           role="status"
           aria-live="polite"
           style={{
             position: "fixed",
+            top: 16,
             right: 16,
-            bottom: 16,
             background: "#0f766e",
             color: "#fff",
             padding: "10px 14px",
@@ -99,13 +81,13 @@ export default function ContactSection({
             fontWeight: 600,
           }}
         >
-          ✅ Form has been submitted
+          ✅ Thanks for Contacting Us
         </div>
       )}
 
       <div className="container w-container">
         <div className="w-layout-grid contact-us-grid">
-          {/* LEFT: copy + contact info */}
+          {/* LEFT: static content (unchanged) */}
           <div className="contact-us-content-wrap">
             <div className="section-title-wrap">
               <p className="sub-title pink">Contact</p>
@@ -117,7 +99,6 @@ export default function ContactSection({
               </p>
             </div>
 
-            {/* Email */}
             <div className="contact-email-flex">
               <div className="contact-email-image-wrap">
                 <img
@@ -134,7 +115,6 @@ export default function ContactSection({
               </div>
             </div>
 
-            {/* Phone */}
             <div className="contact-phone-flex">
               <div className="contact-phone-image-wrap">
                 <img
@@ -154,7 +134,6 @@ export default function ContactSection({
               </div>
             </div>
 
-            {/* Social */}
             <div className="contact-social-media-flex">
               <div className="section-title-wrap">
                 <h4 className="section-title">Follow us on social media</h4>
@@ -226,6 +205,17 @@ export default function ContactSection({
                   method="post"
                   onSubmit={onSubmit}
                 >
+                  {/* Labels added per your request */}
+                  <label
+                    htmlFor="contact-name"
+                    style={{
+                      display: "block",
+                      fontWeight: 600,
+                      marginBottom: 6,
+                    }}
+                  >
+                    Name
+                  </label>
                   <input
                     type="text"
                     className="contact-form-label w-input"
@@ -235,7 +225,17 @@ export default function ContactSection({
                     required
                   />
 
-                  {/* PHONE: digits only, HTML validation, numeric keypad on mobile */}
+                  <label
+                    htmlFor="contact-phone"
+                    style={{
+                      display: "block",
+                      fontWeight: 600,
+                      margin: "10px 0 6px",
+                    }}
+                  >
+                    Phone Number
+                  </label>
+                  {/* PHONE: digits only, validated; no letters */}
                   <input
                     type="tel"
                     className="contact-form-label w-input"
@@ -251,6 +251,16 @@ export default function ContactSection({
                     required
                   />
 
+                  <label
+                    htmlFor="contact-email"
+                    style={{
+                      display: "block",
+                      fontWeight: 600,
+                      margin: "10px 0 6px",
+                    }}
+                  >
+                    Email
+                  </label>
                   <input
                     type="email"
                     className="contact-form-label w-input"
@@ -260,6 +270,16 @@ export default function ContactSection({
                     required
                   />
 
+                  <label
+                    htmlFor="contact-message"
+                    style={{
+                      display: "block",
+                      fontWeight: 600,
+                      margin: "10px 0 6px",
+                    }}
+                  >
+                    Message
+                  </label>
                   <textarea
                     className="contact-form-label message-label w-input"
                     id="contact-message"
@@ -275,7 +295,7 @@ export default function ContactSection({
                   />
                 </form>
 
-                {/* (kept for compatibility; your CSS can keep them hidden) */}
+                {/* kept for compatibility */}
                 <div className="success-message w-form-done">
                   <div>Thank you! Your submission has been received!</div>
                 </div>
