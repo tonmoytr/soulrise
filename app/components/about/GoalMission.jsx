@@ -40,7 +40,7 @@ export default function GoalMission() {
             <p className="section-content sr-gm__foot">
               We want to do more and you can help. By committing a small
               fraction of your income to protect children in need, you can help
-              save a child and contribute to humanity.
+              save a child and contribute to SorlRise.
             </p>
           </div>
 

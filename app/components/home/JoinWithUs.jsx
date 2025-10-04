@@ -26,7 +26,7 @@ export default function JoinWithUs() {
               <div className="section-title-wrap">
                 <p className="sub-title white">Join With Us</p>
                 <h2 className="section-title white">
-                  Join With Humanity To Give Education For Poor Children
+                  Join With SoulRise To Give Education For Poor Children
                 </h2>
                 <p className="section-content white">
                   Join us in the fight against poverty! By becoming a Champion

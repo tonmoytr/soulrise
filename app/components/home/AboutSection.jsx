@@ -35,7 +35,7 @@ export default function AboutSection() {
             <div className="section-content-wrap">
               <p>
                 We believe in doing more—with you. A small act of <br /> generosity can
-                protect a child, restore dignity, <br /> and move humanity forward.
+                protect a child, restore dignity, <br /> and move Soulrise forward.
                 <br />
                 <br />
                 Partner with Food For The Poor to nourish bodies <br /> and uplift

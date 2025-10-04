@@ -138,7 +138,7 @@ export default function ContactSection({
               <div className="section-title-wrap">
                 <h4 className="section-title">Follow us on social media</h4>
                 <p className="social-content">
-                  Humanity organization’s process is posted on social media
+                  Soulrise organization’s process is posted on social media
                   platforms too, so please follow us.
                 </p>
               </div>

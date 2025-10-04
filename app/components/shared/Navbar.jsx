@@ -68,12 +68,12 @@ export default function Navbar() {
           <Link
             href="/"
             className="brand w-nav-brand"
-            aria-label="Humanity Home"
+            aria-label="SoulRise Home"
           >
             <img
               className="brand-logo"
               src="/assets/images/logo/logo.png"
-              alt="Humanity"
+              alt="SoulRise"
             />
           </Link>
 

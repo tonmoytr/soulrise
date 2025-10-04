@@ -155,7 +155,7 @@ export default function VolunteerForm({
               <div className="volunteer-form-title">
                 <h4 className="volunteer-title">Complete the Form</h4>
                 <p className="volunteer-sub-title">
-                  Fill Form and Become Volunteer in Humanity
+                  Fill Form and Become Volunteer in SoulRise
                 </p>
               </div>
 

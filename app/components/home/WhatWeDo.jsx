@@ -78,7 +78,7 @@ export default function WhatWeDo() {
                 <h2 className="what-we-do-sub-heading">Food Delivery</h2>
                 <p className="section-content">
                   Fundraising for local causes World Help received through the
-                  humanity and give hope to people.
+                  SoulRise and give hope to people.
                 </p>
               </div>
             </div>

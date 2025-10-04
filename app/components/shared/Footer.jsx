@@ -88,14 +88,14 @@ export default function Footer() {
                       <h3 className="footer-widget-title">Get Involved</h3>
                     </div>
                     <div className="footer-menu-link-wrap">
-                      <Link href="/about-us" className="footer-link">
+                      <Link href="/about" className="footer-link">
                         About Us
                       </Link>
                       <Link href="/volunteer" className="footer-link">
                         Volunteer
                       </Link>
                       <Link href="/campaigns" className="footer-link">
-                        Causes
+                        Campaigns
                       </Link>
                       <Link href="/project" className="footer-link">
                         Projects

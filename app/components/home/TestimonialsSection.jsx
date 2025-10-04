@@ -83,7 +83,7 @@ export default function TestimonialsSection() {
                         Marketing Director
                       </p>
                       <p className="section-content">
-                        Humanity Is A Wonderful, Easy To Use Site. We Were Able
+                        SoulRise Is A Wonderful, Easy To Use Site. We Were Able
                         To Have A Successful Silent Auction And We Couldn’t Have
                         Done It.
                       </p>
@@ -118,7 +118,7 @@ export default function TestimonialsSection() {
                         CEO - Helping Hands
                       </p>
                       <p className="section-content">
-                        I Thank You Very Much Humanity Team. It Will Definitely
+                        I Thank You Very Much SoulRise Team. It Will Definitely
                         Help Our Students To Enrich Their Reading Skills And
                         Knowledge Forever.
                       </p>
@@ -151,7 +151,7 @@ export default function TestimonialsSection() {
                       </h2>
                       <p className="testimonial-content-sub-title">Donator</p>
                       <p className="section-content">
-                        Thank You Very Much Humanity Team. It Will Definitely
+                        Thank You Very Much SoulRise Team. It Will Definitely
                         Help Our Students To Enrich Their Reading Skills And
                         Knowledge Forever.
                       </p>
@@ -184,8 +184,8 @@ export default function TestimonialsSection() {
                       </h2>
                       <p className="testimonial-content-sub-title">Designer</p>
                       <p className="section-content">
-                        This Is Great Service, I Really Admire. Humanity Really
-                        Dedicate The Welfare Of Humanity General Particularly In
+                        This Is Great Service, I Really Admire. SoulRise Really
+                        Dedicate The Welfare Of SoulRise General Particularly In
                         This Country.
                       </p>
                     </div>
