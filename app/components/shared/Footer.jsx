@@ -94,7 +94,7 @@ export default function Footer() {
                       <Link href="/volunteer" className="footer-link">
                         Volunteer
                       </Link>
-                      <Link href="/causes" className="footer-link">
+                      <Link href="/campaigns" className="footer-link">
                         Causes
                       </Link>
                       <Link href="/project" className="footer-link">

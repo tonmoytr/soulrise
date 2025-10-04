@@ -1,4 +1,4 @@
-// app/causes/[slug]/page.jsx
+// app/campaigns/[slug]/page.jsx
 import Footer from "@/app/components/shared/Footer";
 import Navbar from "@/app/components/shared/Navbar";
 import TopBar from "@/app/components/shared/TopBar";
@@ -39,7 +39,7 @@ export default function CausePage({ params }) {
         <div className="clc-wrap">
           {/* Breadcrumb */}
           <div className="clc-breadcrumb">
-            <Link href="/causes">&larr; Back to all causes</Link>
+            <Link href="/campaigns">&larr; Back to all Campaigns</Link>
           </div>
 
           {/* Meta & Title */}

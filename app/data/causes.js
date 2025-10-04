@@ -4,7 +4,7 @@ export const causes = [
     slug: "big-charity-build-school-for-poor-children",
     title: "Build a School for Children in Need",
     image: "/assets/images/homepage/2.jpg",
-    href: "/causes/big-charity-build-school-for-poor-children",
+    href: "/campaigns/big-charity-build-school-for-poor-children",
     category: "Education",
     location: "Rangpur, Bangladesh",
     organizer: {
@@ -69,7 +69,7 @@ export const causes = [
     slug: "first-charity-activity-of-this-summer-today",
     title: "Summer Meal Drive for Families",
     image: "/assets/images/homepage/3.jpg",
-    href: "/causes/first-charity-activity-of-this-summer-today",
+    href: "/campaigns/first-charity-activity-of-this-summer-today",
     category: "Food Security",
     location: "Dhaka, Bangladesh",
     organizer: {
@@ -118,7 +118,7 @@ export const causes = [
     slug: "health-camp-for-mothers-and-children",
     title: "Mobile Health Camp for Mothers & Children",
     image: "/assets/images/homepage/4.jpg",
-    href: "/causes/health-camp-for-mothers-and-children",
+    href: "/campaigns/health-camp-for-mothers-and-children",
     category: "Health",
     location: "Barishal, Bangladesh",
     organizer: {
@@ -167,7 +167,7 @@ export const causes = [
     slug: "clean-water-point-and-hygiene-kits",
     title: "Clean Water Point & Hygiene Kits",
     image: "/assets/images/homepage/5.jpg",
-    href: "/causes/clean-water-point-and-hygiene-kits",
+    href: "/campaigns/clean-water-point-and-hygiene-kits",
     category: "WASH",
     location: "Khulna, Bangladesh",
     organizer: {
@@ -214,7 +214,7 @@ export const causes = [
     slug: "youth-digital-skills-lab",
     title: "Youth Digital Skills Lab",
     image: "/assets/images/homepage/6.jpg",
-    href: "/causes/youth-digital-skills-lab",
+    href: "/campaigns/youth-digital-skills-lab",
     category: "Livelihood",
     location: "Chattogram, Bangladesh",
     organizer: {
@@ -256,7 +256,7 @@ export const causes = [
     slug: "emergency-shelter-repair-monsoon",
     title: "Emergency Shelter Repair (Monsoon)",
     image: "/assets/images/homepage/7.jpg",
-    href: "/causes/emergency-shelter-repair-monsoon",
+    href: "/campaigns/emergency-shelter-repair-monsoon",
     category: "Emergency Relief",
     location: "Sylhet, Bangladesh",
     organizer: {

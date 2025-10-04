@@ -33,7 +33,7 @@ export default function VolunteerForm({
       last: true,
     },
   ],
-  cta = { label: "Get Started", href: "/causes" },
+  cta = { label: "Get Started", href: "/campaigns" },
   formAction = "#",
 }) {
   const [showToast, setShowToast] = useState(false);
